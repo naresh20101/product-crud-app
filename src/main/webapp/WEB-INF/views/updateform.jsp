@@ -14,29 +14,32 @@
 <div class="container mt-3">
    <div class="row">
      <div class="col-md-6 offset-md-3">
-     <h1 class="text-center mb-3">Fill the Product Detail</h1>
-     <form action="handle-product" method="post">
+     <h1 class="text-center mb-3">UPDATE PRODUCT DETAILS</h1>
+     <form action="${pageContext.request.contextPath }/handle-product" method="post">
+     <input type="hidden" value="${product.id}">
+     
             <div class="form-group">
                <label for="name" class="form-label"> Product Name</label>
                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
-               placeholder="Enter your Product Name">
+               placeholder="Enter your Product Name"
+               value="${product.name }">
    
             </div>
             <div class="form-group">
                <label for="name" class="form-label"> Product Description</label>
                <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="description"
-                row="5" placeholder="Enter your Product Description"></textarea>
+                row="5" placeholder="Enter your Product Description">${product.description}</textarea>
    
             </div>
             <div class="form-group">
                <label for="name" class="form-label"> Product Price</label>
                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="price"
-               placeholder="Enter your Product Price">
+               placeholder="Enter your Product Price" value="${product.price}">
    
             </div>
             <div class="container text-center">
                    <a href="${pageContext.request.contextPath }/" class="btn btn-danger"> Back </a>
-                   <button type="submit" class="btn btn-success">Add</button>
+                   <button type="submit" class="btn btn-success">Update</button>
               </div>
          </form>
      </div>
